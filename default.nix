@@ -42,7 +42,11 @@ let
 in
 {
   options.services.beets = {
-    enable = lib.mkEnableOption "beets music library";
+    enable = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "beets music library layout and tools.";
+    };
     libraryPath = lib.mkOption {
       type = lib.types.str;
       default = "/away/main/Music";
